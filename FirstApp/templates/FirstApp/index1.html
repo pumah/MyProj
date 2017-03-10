@@ -1,0 +1,23 @@
+{% if request.user.username == "" %}
+    {{ redirect('FirstApp:login')}}
+
+    {% elif %}
+        {% if all_records %}
+                <h2>Welcome</h2> {{ request.user.username }}  | <a href="/FirstApp/logout">logout</a>
+                <h3><i>All records</i></h3>
+                        <ul>
+                        {% for record in all_records %}
+                        <li> <a href="/FirstApp/{{record.id}}/">{{record.Pcol1}}</a></li>
+                        {% endfor %}
+                        <br><br>
+                        <li><a href="/FirstApp/PriCreate/">Create new Primary record</a></li>
+                        </ul>
+
+        {% else %}
+            <h3> There are no records to be displayed </h3>
+
+        {% endif %}
+{% endif %}
+
+
+
