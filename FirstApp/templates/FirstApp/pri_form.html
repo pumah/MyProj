@@ -1,28 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Create new Primary Record</title>
-</head>
-<body>
+{% extends 'FirstApp/base.html' %}
 
-<form method="post">
-    {% csrf_token %}
+{% block title %}Create new Primary Record{% endblock %}
 
-    <table>
-        {% for field in form %}
-            <tr>
-                <td>{{ field.label_tag }}</td>
-                <td>{{ field }}</td>
-                <td>{{ field.errors }}</td>
-            </tr>
-        {% endfor %}
-        <tr>
-            <td align="center">
+{% block content %}
+    <div class="container">
+
+        <h2>Create new Primary Record</h2>
+
+        <form class="form-horizontal" method="post">
+            {% csrf_token %}
+
+
+            <div class="form-group">
+                <label for="id_Pcol1">Pcol1:</label>
+                <input id="id_Pcol1" maxlength="50" name="Pcol1" type="text" required class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label for="id_Pcol2">Pcol2:</label>
+                <input id="id_Pcol2" maxlength="10" name="Pcol2" type="text" required class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label for="id_Pcol3">Pcol3:</label>
+                <input id="id_Pcol3" maxlength="20" name="Pcol3" type="text" required class="form-control"/>
+            </div>
+
+            <div class="form-group">
                 <button type="submit">Submit</button>
-            </td>
-        </tr>
-    </table>
-</form>
-</body>
-</html>
+            </div>
+        </form>
+{% endblock %}
