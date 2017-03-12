@@ -1,7 +1,7 @@
 # MyProj
 Built using django
 
-This site contains only one app - 'FirstApp'
+This site contains only one app - 'FirstApp'. Hosted with URL : https://django-proj.herokuapp.com/
 
 Currently, it has the following features :
 * No Admin account created
